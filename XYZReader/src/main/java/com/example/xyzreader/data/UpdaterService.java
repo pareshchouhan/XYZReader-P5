@@ -59,10 +59,12 @@ public class UpdaterService extends IntentService {
             if (array == null) {
                 throw new JSONException("Invalid parsed item array" );
             }
-
+            //Fixed a bug which made, detail activity display nothing
+            //solution is hacky but it works.
             for (int i = 0; i < array.length(); i++) {
                 ContentValues values = new ContentValues();
                 JSONObject object = array.getJSONObject(i);
+                values.put(ItemsContract.Items._ID, i);
                 values.put(ItemsContract.Items.SERVER_ID, object.getString("id" ));
                 values.put(ItemsContract.Items.AUTHOR, object.getString("author" ));
                 values.put(ItemsContract.Items.TITLE, object.getString("title" ));

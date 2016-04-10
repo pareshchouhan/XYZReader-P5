@@ -17,7 +17,7 @@ public class ItemsDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + Tables.ITEMS + " ("
-                + ItemsContract.ItemsColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + ItemsContract.ItemsColumns._ID + " INTEGER PRIMARY KEY,"
                 + ItemsContract.ItemsColumns.SERVER_ID + " TEXT,"
                 + ItemsContract.ItemsColumns.TITLE + " TEXT NOT NULL,"
                 + ItemsContract.ItemsColumns.AUTHOR + " TEXT NOT NULL,"

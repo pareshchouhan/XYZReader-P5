@@ -23,6 +23,7 @@ public class ArticleLoader extends CursorLoader {
     public interface Query {
         String[] PROJECTION = {
                 ItemsContract.Items._ID,
+                ItemsContract.Items.SERVER_ID,
                 ItemsContract.Items.TITLE,
                 ItemsContract.Items.PUBLISHED_DATE,
                 ItemsContract.Items.AUTHOR,
@@ -33,12 +34,13 @@ public class ArticleLoader extends CursorLoader {
         };
 
         int _ID = 0;
-        int TITLE = 1;
-        int PUBLISHED_DATE = 2;
-        int AUTHOR = 3;
-        int THUMB_URL = 4;
-        int PHOTO_URL = 5;
-        int ASPECT_RATIO = 6;
-        int BODY = 7;
+        int SERVER_ID = 1;
+        int TITLE = 2;
+        int PUBLISHED_DATE = 3;
+        int AUTHOR = 4;
+        int THUMB_URL = 5;
+        int PHOTO_URL = 6;
+        int ASPECT_RATIO = 7;
+        int BODY = 8;
     }
 }
