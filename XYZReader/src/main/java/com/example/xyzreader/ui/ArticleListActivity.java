@@ -75,8 +75,10 @@ public class ArticleListActivity extends ActionBarActivity implements
         if (savedInstanceState == null) {
             refresh();
         }else {
-            mRecyclerView.getLayoutManager().onRestoreInstanceState(savedInstanceState
-                    .getParcelable(SAVE_INSTANCE_LIST));
+            if(mRecyclerView != null && mRecyclerView.getLayoutManager() != null)   {
+                mRecyclerView.getLayoutManager().onRestoreInstanceState(savedInstanceState
+                        .getParcelable(SAVE_INSTANCE_LIST));
+            }
         }
     }
 
@@ -93,7 +95,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        if(mRecyclerView != null)   {
+        if(mRecyclerView != null && mRecyclerView.getLayoutManager() != null)   {
             mRecyclerView.getLayoutManager().onRestoreInstanceState(savedInstanceState
                     .getParcelable(SAVE_INSTANCE_LIST));
         }
